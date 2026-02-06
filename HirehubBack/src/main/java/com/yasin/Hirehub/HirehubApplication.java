@@ -1,13 +1,13 @@
-package com.iemployee.iemployee;
+package com.yasin.Hirehub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IemployeeApplication {
+public class HirehubApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IemployeeApplication.class, args);
+		SpringApplication.run(HirehubApplication.class, args);
 	}
 
 }

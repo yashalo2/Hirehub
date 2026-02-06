@@ -1,10 +1,10 @@
-package com.iemployee.iemployee;
+package com.yasin.Hirehub;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IemployeeApplicationTests {
+class HirehubApplicationTests {
 
 	@Test
 	void contextLoads() {

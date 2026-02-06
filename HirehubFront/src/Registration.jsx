@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import Logo from "./assets/blackLogo.png";
-function Login() {
+function Registration() {
   const navigate = useNavigate();
   return (
     <div className={style.Container}>
@@ -9,20 +9,24 @@ function Login() {
         <img src={Logo} alt="" />
       </div>
       <div className={style.actionBtns}>
-        <button onClick={() => navigate("register")}>Register</button>
+        <button onClick={() => navigate("/")}>Login</button>
         <button>About</button>
       </div>
-
       <form>
-        <h1>Sign-In</h1>
+        <h1>Sign-Up</h1>
+        <label htmlFor="email">First Name</label>
+        <input type="text" id="email" name="email" />
+        <label htmlFor="email">Last Name</label>
+        <input type="text" id="email" name="email" />
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
+        <input type="text" id="email" name="email" />
         <label htmlFor="password">Password</label>
         <input type="password" name="password" />
-        <a href="#"> forgot password</a>
-        <button>Sign-In</button>
+        <label htmlFor="password"> Confirm Password</label>
+        <input type="password" name="password" />
+        <button>Sign-Un</button>
       </form>
     </div>
   );
 }
-export default Login;
+export default Registration;

@@ -1,12 +1,134 @@
 .Container {
   position: fixed;
+  align-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+
+  background: linear-gradient(
+    135deg,
+    #0f0c29,
+    #302b63,
+    #8e2de2,
+    #4a00e0,
+    #00c9ff
+  );
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  transition:
+    background 0.5s,
+    color 0.5s;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.Container .header {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 10%;
+}
+.Container .header img {
+  width: 100%;
+  height: 100%;
+}
+.Container .header:hover {
+  cursor: pointer;
+}
+.Container .actionBtns {
+  position: absolute;
+  top: 20px;
+  right: 10%;
+  display: flex;
+  gap: 20px;
+}
+.Container .actionBtns button {
+  padding: 0.5em;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+  background: #00f5d4;
+}
+.Container .actionBtns button:hover {
+  background: linear-gradient(135deg, #00f5d4, blue);
+  background-size: 200% 200%;
+  animation: gradientBG 2s ease;
+  color: #ffffff;
+  transition:
+    background 0.5s,
+    color 0.5s;
 }
 .Container form {
+  position: relative;
+  left: calc(50% - 160px);
+  width: 300px;
   padding: 1em;
-  background: black;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-radius: 10px;
+  text-align: left;
+  background: #ededed5c;
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Container form h1 {
+  width: 100%;
+  text-align: center;
+}
+.Container form label,
+input {
+  width: 100%;
+}
+.Container form label {
+  padding-left: 10px;
+}
+.Container form input {
+  height: 30px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.Container form button {
+  width: 100%;
+  font-size: larger;
+  border-radius: 10px;
+  border: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: #ffffff;
+  margin-top: 20px;
+  background: linear-gradient(135deg, blue, blue, #ffffff, blue, blue);
+  background-size: 300% 300%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  transition:
+    background 0.5s,
+    color 0.5s;
+}
+.Container form button:hover {
+  background: blue;
 }
