@@ -55,11 +55,15 @@
   gap: 20px;
 }
 .Container .actionBtns button {
-  padding: 0.5em;
-  width: 80px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
+  font-size: 16px;
   background: #00f5d4;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
 }
 .Container .actionBtns button:hover {
   background: linear-gradient(135deg, #00f5d4, blue);
@@ -69,7 +73,9 @@
   transition:
     background 0.5s,
     color 0.5s;
+  transform: scale(1.05);
 }
+
 .Container form {
   position: relative;
   left: calc(50% - 160px);
@@ -119,6 +125,7 @@ input {
   border: none;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+
   color: #ffffff;
   margin-top: 20px;
   background: linear-gradient(135deg, blue, blue, #ffffff, blue, blue);
@@ -131,4 +138,5 @@ input {
 }
 .Container form button:hover {
   background: blue;
+  transform: scale(1.05);
 }

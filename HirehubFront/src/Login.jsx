@@ -5,12 +5,11 @@ function Login() {
   const navigate = useNavigate();
   return (
     <div className={style.Container}>
-      <div className={style.header}>
+      <div className={style.header} onClick={() => navigate("/")}>
         <img src={Logo} alt="" />
       </div>
       <div className={style.actionBtns}>
-        <button onClick={() => navigate("register")}>Register</button>
-        <button>About</button>
+        <button onClick={() => navigate("/register")}>Register</button>
       </div>
 
       <form>
