@@ -1,0 +1,109 @@
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  align-content: center;
+  background: #ffffff;
+  color: #000000;
+}
+.topBar .profile {
+  position: absolute;
+  top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: top;
+  right: 5%;
+}
+.topBar .profile .img {
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+}
+.topBar .navigator {
+  position: absolute;
+  left: 25%;
+  top: 15px;
+  width: 50%;
+  display: flex;
+  gap: 5%;
+  text-align: center;
+}
+.topBar .navigator nav {
+  width: 100%;
+  display: flex;
+  gap: 5%;
+  text-align: center;
+}
+.topBar .navigator nav .Link {
+  width: max-content;
+  margin-left: 5%;
+  text-decoration: none;
+  color: #000;
+}
+.topBar .navigator nav .current {
+  border-bottom: 2px solid blue;
+  color: blue;
+}
+.label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: larger;
+  width: 60px;
+  height: 100%;
+}
+.menu {
+  display: none;
+}
+.label img {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  position: fixed;
+  top: 55px;
+  left: 5px;
+  height: calc(100% - 60px);
+  width: calc(100% - 10px);
+  background: #f4f4f4;
+  overflow: auto;
+}
+@media (max-width: 00px) {
+  .leftBar {
+    display: none;
+  }
+  .menu {
+    display: block;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    z-index: 9;
+    width: calc(100% - 10px);
+    height: 50px;
+    font-size: larger;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background: black;
+  }
+  .menu div {
+    background: yellow;
+    height: 80%;
+    width: 20%;
+    align-content: center;
+    text-align: center;
+  }
+  .topBar .navigator {
+    display: none;
+  }
+  .content {
+    width: calc(100% - 10px);
+    height: calc(100% - 115px);
+    left: 5px;
+    z-index: 2;
+  }
+}

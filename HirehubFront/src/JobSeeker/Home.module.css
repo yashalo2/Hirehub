@@ -1,0 +1,635 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.toAll {
+  display: none;
+}
+.toSuggestion {
+  display: none;
+}
+.container .postContainer {
+  position: relative;
+  left: 10%;
+  width: 40%;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.container .postContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.container .postContainer::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.container .postContainer .post {
+  background: #ffffff;
+  width: 100%;
+  padding-bottom: 20px;
+  border-top: 0.5px solid #e5e7eb;
+}
+.container .postContainer .post .header {
+  width: 100%;
+  height: 60px;
+}
+.container .postContainer .post .header:hover {
+  background: #8e2de2;
+  color: #fff;
+  cursor: pointer;
+}
+.container .postContainer .post .header .profileContainer {
+  padding: 0.5em;
+  display: flex;
+}
+.container .postContainer .post .header .profileContainer .profile {
+  width: 40px;
+  height: 40px;
+  background: black;
+  border-radius: 50%;
+}
+.container .postContainer .post .header .profileContainer .nameAndJobType {
+  display: grid;
+  flex: 1;
+  padding-left: 1em;
+}
+.container
+  .postContainer
+  .post
+  .header
+  .profileContainer
+  .nameAndJobType
+  strong,
+p {
+  margin: 0;
+  padding: 0;
+}
+.container .postContainer .post .postContent {
+  width: 92%;
+  margin-left: 4%;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 0.1px solid #e5e7eb;
+  box-shadow: 0px 0.5px 0.5px rgb(223, 223, 223);
+}
+.container .postContainer .post .postContent .jobInfo {
+  padding: 5%;
+  width: 90%;
+  font-size: medium;
+  font-family: serif;
+  background: #ffffff;
+}
+.container .postContainer .post .postContent .action {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+}
+.container .postContainer .post .postContent .action .likeContainer {
+  flex: 1;
+  align-content: center;
+}
+.container
+  .postContainer
+  .post
+  .postContent
+  .action
+  .likeContainer
+  .likeAndNumber {
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.container .postContainer .post .postContent .action .buttonContainer {
+  width: max-content;
+  align-content: center;
+  padding: 10px;
+}
+.container .postContainer .post .postContent .action .buttonContainer button {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background: #2563eb;
+}
+.container
+  .postContainer
+  .post
+  .postContent
+  .action
+  .buttonContainer
+  button:hover {
+  background: #1d4ed8;
+}
+.container .suggest {
+  position: absolute;
+  left: 60%;
+  top: 90px;
+  width: 40%;
+  height: calc(100% - 100px);
+  overflow: hidden;
+}
+.container .suggest .suggestedContainer {
+  height: 90%;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.container .suggest .suggestedContainer .post {
+  background: #ffffff;
+  width: 100%;
+  padding-bottom: 20px;
+  border-top: 0.5px solid #e5e7eb;
+}
+.container .suggest .suggestedContainer .post .header {
+  width: 100%;
+  height: 60px;
+}
+.container .suggest .suggestedContainer .post .header:hover {
+  background: #8e2de2;
+  color: #fff;
+  cursor: pointer;
+}
+.container .suggest .suggestedContainer .post .header .profileContainer {
+  padding: 0.5em;
+  display: flex;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .header
+  .profileContainer
+  .profile {
+  width: 40px;
+  height: 40px;
+  background: black;
+  border-radius: 50%;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .header
+  .profileContainer
+  .nameAndJobType {
+  display: grid;
+  flex: 1;
+  padding-left: 1em;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .header
+  .profileContainer
+  .nameAndJobType
+  strong,
+p {
+  margin: 0;
+  padding: 0;
+}
+.container .suggest .suggestedContainer .post .postContent {
+  width: 92%;
+  margin-left: 4%;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 0.1px solid #e5e7eb;
+  box-shadow: 0px 0.5px 0.5px rgb(223, 223, 223);
+}
+.container .suggest .suggestedContainer .post .postContent .jobInfo {
+  padding: 5%;
+  width: 90%;
+  font-size: medium;
+  font-family: serif;
+  background: #ffffff;
+}
+.container .suggest .suggestedContainer .post .postContent .action {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .postContent
+  .action
+  .likeContainer {
+  flex: 1;
+  align-content: center;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .postContent
+  .action
+  .likeContainer
+  .likeAndNumber {
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .postContent
+  .action
+  .buttonContainer {
+  width: max-content;
+  align-content: center;
+  padding: 10px;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .postContent
+  .action
+  .buttonContainer
+  button {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background: #2563eb;
+}
+.container
+  .suggest
+  .suggestedContainer
+  .post
+  .postContent
+  .action
+  .buttonContainer
+  button:hover {
+  background: #1d4ed8;
+}
+.container .userInfo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .userInfo .profileContainerInfo {
+  width: 100%;
+  height: 30%;
+  background: #f4f4f4;
+}
+
+.container .userInfo .profileContainerInfo .back {
+  position: absolute;
+  color: red;
+  font-size: large;
+  cursor: pointer;
+  z-index: 3;
+}
+.container .userInfo .profileContainerInfo .profile {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  align-content: center;
+}
+.container .userInfo .profileContainerInfo .profile div {
+  position: absolute;
+  left: calc(50% - 60px);
+  top: calc(50% - 60px);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background: black;
+}
+.container .userInfo .profileContainerInfo .nameAndMore {
+  width: 100%;
+  height: 40%;
+}
+.container .userInfo .profileContainerInfo .nameAndMore .nameInfo {
+  width: 100%;
+  font-size: larger;
+  text-align: center;
+}
+.container .userInfo .profileContainerInfo .nameAndMore .website {
+  width: 100%;
+  height: 70%;
+  display: grid;
+  text-align: center;
+}
+
+.container .userInfo .companyPost {
+  position: absolute;
+  top: 30%;
+  width: 90%;
+  height: 70%;
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow: auto;
+  background: #f4f4f4;
+}
+.container .userInfo .companyPost .post {
+  background: #ffffff;
+  width: 100%;
+  padding-bottom: 20px;
+  border-top: 0.5px solid #e5e7eb;
+}
+.container .userInfo .companyPost .post .header {
+  width: 100%;
+  height: 60px;
+}
+.container .userInfo .companyPost .post .header:hover {
+  background: #8e2de2;
+  cursor: pointer;
+  color: #fff;
+}
+.container .userInfo .companyPost .post .header .profileContainer {
+  padding: 0.5em;
+  display: flex;
+}
+.container .userInfo .companyPost .post .header .profileContainer .profile {
+  width: 40px;
+  height: 40px;
+  background: black;
+  border-radius: 50%;
+}
+.container
+  .userInfo
+  .companyPost
+  .post
+  .header
+  .profileContainer
+  .nameAndJobType {
+  display: grid;
+  flex: 1;
+  padding-left: 1em;
+}
+.container
+  .userInfo
+  .companyPost
+  .post
+  .header
+  .profileContainer
+  .nameAndJobType
+  strong,
+p {
+  margin: 0;
+  padding: 0;
+}
+.container .userInfo .companyPost .post .postContent {
+  width: 92%;
+  margin-left: 4%;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 0.1px solid #e5e7eb;
+  box-shadow: 0px 0.5px 0.5px rgb(223, 223, 223);
+}
+.container .userInfo .companyPost .post .postContent .jobInfo {
+  padding: 5%;
+  width: 90%;
+  font-size: medium;
+  font-family: serif;
+  background: #ffffff;
+}
+.container .userInfo .companyPost .post .postContent .action {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+}
+.container .userInfo .companyPost .post .postContent .action .likeContainer {
+  flex: 1;
+  align-content: center;
+}
+.container
+  .userInfo
+  .companyPost
+  .post
+  .postContent
+  .action
+  .likeContainer
+  .likeAndNumber {
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.container .userInfo .companyPost .post .postContent .action .buttonContainer {
+  width: max-content;
+  align-content: center;
+  padding: 10px;
+}
+.container
+  .userInfo
+  .companyPost
+  .post
+  .postContent
+  .action
+  .buttonContainer
+  button {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background: #2563eb;
+}
+.container
+  .userInfo
+  .companyPost
+  .post
+  .postContent
+  .action
+  .buttonContainer
+  button:hover {
+  background: #1d4ed8;
+}
+@media (max-width: 1000px) {
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .toAll {
+    display: block;
+    color: blue;
+    cursor: pointer;
+  }
+  .toSuggestion {
+    display: block;
+    position: relative;
+    left: 80%;
+    color: blue;
+    cursor: pointer;
+  }
+  .container .suggested {
+    width: 100%;
+    height: 100%;
+  }
+  .container .suggested .suggestedContainer {
+    height: 90%;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  .container .suggested .suggestedContainer .post {
+    background: #ffffff;
+    width: 100%;
+    padding-bottom: 20px;
+    border-top: 0.5px solid #e5e7eb;
+  }
+  .container .suggested .suggestedContainer .post .header {
+    width: 100%;
+    height: 60px;
+  }
+  .container .suggested .suggestedContainer .post .header:hover {
+    background: #8e2de2;
+    color: #fff;
+    cursor: pointer;
+  }
+  .container .suggested .suggestedContainer .post .header .profileContainer {
+    padding: 0.5em;
+    display: flex;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .header
+    .profileContainer
+    .profile {
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .header
+    .profileContainer
+    .nameAndJobType {
+    display: grid;
+    flex: 1;
+    padding-left: 1em;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .header
+    .profileContainer
+    .nameAndJobType
+    strong,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .container .suggested .suggestedContainer .post .postContent {
+    width: 92%;
+    margin-left: 4%;
+    border-radius: 3px;
+    background: #ffffff;
+    border: 0.1px solid #e5e7eb;
+    box-shadow: 0px 0.5px 0.5px rgb(223, 223, 223);
+  }
+  .container .suggested .suggestedContainer .post .postContent .jobInfo {
+    padding: 5%;
+    width: 90%;
+    font-size: medium;
+    font-family: serif;
+    background: #ffffff;
+  }
+  .container .suggested .suggestedContainer .post .postContent .action {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+    display: flex;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .postContent
+    .action
+    .likeContainer {
+    flex: 1;
+    align-content: center;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .postContent
+    .action
+    .likeContainer
+    .likeAndNumber {
+    background: #fff;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .postContent
+    .action
+    .buttonContainer {
+    width: max-content;
+    align-content: center;
+    padding: 10px;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .postContent
+    .action
+    .buttonContainer
+    button {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background: #2563eb;
+  }
+  .container
+    .suggested
+    .suggestedContainer
+    .post
+    .postContent
+    .action
+    .buttonContainer
+    button:hover {
+    background: #1d4ed8;
+  }
+  .container .hide {
+    display: none;
+  }
+
+  .container .suggest {
+    display: none;
+  }
+  .container .postContainer {
+    width: 100%;
+    height: calc(100% - 10px);
+    top: 10px;
+    left: 0;
+  }
+}
