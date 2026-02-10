@@ -4,7 +4,7 @@ import logo from "./assets/blackLogo.png";
 function LandingPage() {
   const navigate = useNavigate();
   return (
-    <>
+    <div className={style.landingContainer}>
       <div className={style.container}>
         {" "}
         <div className={style.logo}>
@@ -19,7 +19,7 @@ function LandingPage() {
           {" "}
           <button
             className={style.btnPrimary}
-            onClick={() => navigate("login")}
+            onClick={() => navigate("register")}
           >
             Get Started
           </button>{" "}
@@ -31,7 +31,7 @@ function LandingPage() {
           </button>{" "}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default LandingPage;

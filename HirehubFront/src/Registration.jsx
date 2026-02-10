@@ -1,24 +1,39 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import Logo from "./assets/blackLogo.png";
 
 function Registration() {
   const formRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [color, setColor] = useState({
+    color: "transparent",
+  });
   const navigate = useNavigate();
-
   const Register = (e) => {
     e.preventDefault();
-    const formData = new FormData(formRef.current);
+    if (password != confirmPassword) {
+      setColor({ color: "red" });
+      setMessage("Password don't match !");
+      return;
+    }
 
+    const formData = new FormData(formRef.current);
     fetch("http://localhost:8080/api/users/register", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data);
-        console.log(formData);
+        if (data === "User Registered Successfully") {
+          setColor({ color: "green" });
+          setMessage(data);
+        } else {
+          setColor({ color: "red" });
+          setMessage(data);
+        }
       });
   };
 
@@ -30,17 +45,38 @@ function Registration() {
       <div className={style.actionBtns}>
         <button onClick={() => navigate("/login")}>Login</button>
       </div>
-      <form ref={formRef} onSubmit={Register}>
+      <form ref={formRef} onSubmit={Register} onChange={() => setMessage("")}>
         <h1>Sign-Up</h1>
         <label htmlFor="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" />
+        <input type="text" required id="firstName" name="firstName" />
         <label htmlFor="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" />
+        <input type="text" required id="lastName" name="lastName" />
         <label htmlFor="email">Email</label>
-        <input type="text" id="email" name="email" />
+        <input type="text" required id="email" name="email" />
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" />
+        <input
+          type="password"
+          required
+          id="password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          required
+          name="confirmPassword"
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+        <label className={style.label}>
+          <input type="radio" required name="role" value="jobSeeker" />
+          <span> Job Seeker</span>
+        </label>
+        <label className={style.label}>
+          <input type="radio" required name="role" value="employer" />
+          <span>Employer</span>
+        </label>
+        <p style={color}>{message}</p>
         <button type="submit">Sign-Up</button>
       </form>
     </div>

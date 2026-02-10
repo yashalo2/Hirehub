@@ -19,7 +19,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
+    public ResponseEntity<String> register(@ModelAttribute User user,@RequestParam String email,@RequestParam String confirmPassword) {
         if(userRepository.existsByEmail(user.getEmail())){
             return ResponseEntity.badRequest().body("Email already exists");
         }
@@ -27,7 +27,7 @@ public class UserController {
         return ResponseEntity.ok().body("User Registered Successfully");
     }
     @PostMapping("/login")
-    public ResponseEntity<String> logi(@RequestBody User user, HttpSession session){
+    public ResponseEntity<String> logi(@ModelAttribute User user, HttpSession session){
         Optional<User> userFound= userRepository.findByEmail(user.getEmail());
         if(userFound != null && userFound.get().getPassword().equals(user.getPassword())){
             session.setAttribute("userId", userFound.get().getId());
