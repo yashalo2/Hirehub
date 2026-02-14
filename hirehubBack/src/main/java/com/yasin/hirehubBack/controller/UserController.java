@@ -2,8 +2,12 @@ package com.yasin.hirehubBack.controller;
 
 import com.yasin.hirehubBack.model.User;
 import com.yasin.hirehubBack.repository.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -43,6 +47,13 @@ public class UserController {
             return ResponseEntity.badRequest().body("No user logged in");
         }
         return ResponseEntity.ok().body(info);
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "Logged Out Successfully";
+
+
     }
 }
 
