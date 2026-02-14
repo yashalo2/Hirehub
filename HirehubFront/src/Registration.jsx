@@ -47,10 +47,6 @@ function Registration() {
       </div>
       <form ref={formRef} onSubmit={Register} onChange={() => setMessage("")}>
         <h1>Sign-Up</h1>
-        <label htmlFor="firstName">First Name</label>
-        <input type="text" required id="firstName" name="firstName" />
-        <label htmlFor="lastName">Last Name</label>
-        <input type="text" required id="lastName" name="lastName" />
         <label htmlFor="email">Email</label>
         <input type="text" required id="email" name="email" />
         <label htmlFor="password">Password</label>
