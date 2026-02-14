@@ -17,6 +17,39 @@
   align-items: top;
   right: 5%;
 }
+.topBar .profile .info {
+  position: relative;
+  bottom: 0px;
+  width: 20px;
+  height: 20px;
+  background: black;
+  cursor: pointer;
+}
+.menuContainer {
+  position: fixed;
+  right: 60px;
+  top: 60px;
+  z-index: 3;
+  width: 100px;
+  padding: 1em;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.menuContainer button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-top: 1px solid grey;
+  color: red;
+  padding: 0.5em;
+  margin-top: 20px;
+}
+.menuContainer button:hover {
+  color: darkred;
+  cursor: pointer;
+}
 .topBar .profile .img {
   width: 30px;
   height: 30px;
@@ -70,9 +103,9 @@
   height: calc(100% - 60px);
   width: calc(100% - 10px);
   background: #f4f4f4;
-  overflow: auto;
+  overflow-x: hidden;
 }
-@media (max-width: 00px) {
+@media (max-width: 1000px) {
   .leftBar {
     display: none;
   }

@@ -32,10 +32,11 @@
   background-color: transparent;
 }
 .container .postContainer .post {
-  background: #ffffff;
+  background:
+    linear-gradient(#e5e7eb, #e5e7eb) top/calc(100% - 30px) 1px no-repeat,
+    #ffffff;
   width: 100%;
   padding-bottom: 20px;
-  border-top: 0.5px solid #e5e7eb;
 }
 .container .postContainer .post .header {
   width: 100%;
@@ -476,8 +477,9 @@ p {
     cursor: pointer;
   }
   .container .suggested {
-    width: 100%;
+    width: calc(100% - 10px);
     height: 100%;
+    margin-left: 5px;
   }
   .container .suggested .suggestedContainer {
     height: 90%;
@@ -627,9 +629,9 @@ p {
     display: none;
   }
   .container .postContainer {
-    width: 100%;
+    width: calc(100% - 10px);
     height: calc(100% - 10px);
     top: 10px;
-    left: 0;
+    left: 5px;
   }
 }
