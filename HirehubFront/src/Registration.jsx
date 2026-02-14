@@ -65,11 +65,11 @@ function Registration() {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <label className={style.label}>
-          <input type="radio" required name="role" value="jobSeeker" />
+          <input type="radio" required name="role" value="Seeker" />
           <span> Job Seeker</span>
         </label>
         <label className={style.label}>
-          <input type="radio" required name="role" value="employer" />
+          <input type="radio" required name="role" value="Employer" />
           <span>Employer</span>
         </label>
         <p style={color}>{message}</p>
