@@ -20,10 +20,11 @@ function Login() {
     })
       .then((response) => response.text())
       .then((data) => {
-        if (data === "user Logged Successfully") {
+        if (data === "User Logged Successfully") {
           setColor({ color: "green" });
           setMessage(data);
           navigate("/seeker");
+          localStorage.setItem("currentPage", "home") || "home";
         } else {
           setColor({ color: "red" });
           setMessage(data);
@@ -45,12 +46,14 @@ function Login() {
         <input
           type="email"
           id="email"
+          required
           name="email"
           onChange={() => setMessage("")}
         />
         <label htmlFor="password">Password</label>
         <input
           type="password"
+          required
           name="password"
           onChange={() => setMessage("")}
         />

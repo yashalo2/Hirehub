@@ -23,10 +23,7 @@ function LandingPage() {
           >
             Get Started
           </button>{" "}
-          <button
-            className={style.btnSecondary}
-            onClick={() => navigate("/about")}
-          >
+          <button className={style.aboutBtn} onClick={() => navigate("/about")}>
             Learn More
           </button>{" "}
         </div>

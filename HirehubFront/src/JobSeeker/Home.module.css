@@ -21,7 +21,8 @@
   left: 10%;
   width: 40%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
@@ -290,7 +291,7 @@ p {
 .container .userInfo .profileContainerInfo {
   width: 100%;
   height: 30%;
-  background: #f4f4f4;
+  background: #fff;
 }
 
 .container .userInfo .profileContainerInfo .back {
@@ -339,13 +340,17 @@ p {
   padding-left: 5%;
   padding-right: 5%;
   overflow: auto;
-  background: #f4f4f4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 10px;
 }
 .container .userInfo .companyPost .post {
-  background: #ffffff;
+  background:
+    linear-gradient(#e5e7eb, #e5e7eb) top/calc(100% - 30px) 1px no-repeat,
+    #ffffff;
   width: 100%;
   padding-bottom: 20px;
-  border-top: 0.5px solid #e5e7eb;
+  flex: 1;
 }
 .container .userInfo .companyPost .post .header {
   width: 100%;
@@ -363,9 +368,9 @@ p {
 .container .userInfo .companyPost .post .header .profileContainer .profile {
   width: 40px;
   height: 40px;
-  background: black;
   border-radius: 50%;
 }
+
 .container
   .userInfo
   .companyPost
@@ -481,6 +486,7 @@ p {
     height: 100%;
     margin-left: 5px;
   }
+
   .container .suggested .suggestedContainer {
     height: 90%;
     overflow: auto;
@@ -633,5 +639,8 @@ p {
     height: calc(100% - 10px);
     top: 10px;
     left: 5px;
+  }
+  .container .userInfo .companyPost {
+    grid-template-columns: 1fr;
   }
 }

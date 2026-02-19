@@ -9,7 +9,21 @@ public class User {
     private String email;
     private String password;
     private Role role;
+    private String profilePath;
 
+    @PrePersist
+    public void prePersist() {
+        if(role == Role.Seeker)
+        profilePath = "/uploads/seeker.jpg";
+        else
+        profilePath = "/uploads/employer.jpg";
+    }
+    public void setProfilePath(String profilePath) {
+        this.profilePath = profilePath;
+    }
+    public String getProfilePath() {
+        return profilePath;
+    }
     public Long getId() {
         return id;
     }
